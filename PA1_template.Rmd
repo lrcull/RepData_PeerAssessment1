@@ -11,6 +11,15 @@ setwd("C:/Users/Leslie/Documents/Classes/Data Science/Reproducible Research/Week
 data <- read.csv("activity.csv")
 ```
 
+
+
+```{r opts, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.path = "images/"
+)
+```
+
+
 ```
 Transform the data to make it usable.
 
