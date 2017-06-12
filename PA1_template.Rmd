@@ -16,7 +16,7 @@ data <- read.csv("activity.csv")
 
 ```{r opts, echo = FALSE}
 knitr::opts_chunk$set(
-  fig.path = "images/"
+  fig.path = "images/", include = TRUE
 )
 ```
 
