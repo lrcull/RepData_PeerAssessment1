@@ -1,8 +1,3 @@
----
-output: 
-  html_document: 
-    keep_md: yes
----
 PA1\_template
 ================
 
@@ -30,7 +25,7 @@ Plot a histogram of the total number of steps taken each day.
 hist(stepsperday$steps, col = "blue", xlab = "Steps Per Day", main = "Total Number of Steps Per Day")
 ```
 
-![](images/unnamed-chunk-4-1.png)
+![](images/total_steps_per_day_histogram-1.png)
 
 Calculate and report the mean of the total number of steps taken each day.
 
@@ -58,7 +53,7 @@ intervals <- aggregate(steps ~ interval, newdata, mean)
 plot(intervals$interval, intervals$steps, type = "l", ylim = c(0, 210))
 ```
 
-![](images/unnamed-chunk-7-1.png)
+![](images/intervals-1.png)
 
 Which 5-minute interval, on average across all days in the dataset, contains the maximum number of steps?
 
@@ -103,7 +98,7 @@ stepsperday2 <- aggregate(steps ~ date, nadata, sum)
 hist(stepsperday2$steps, col = "red", xlab = "Steps Per Day", main = "Total Number of Steps Per Day")
 ```
 
-![](images/unnamed-chunk-12-1.png)
+![](images/total_steps_per_day_imputed-1.png)
 
 Mean of steps with imputed values:
 
@@ -150,4 +145,4 @@ xyplot(steps~interval|daytype,
        layout=c(1,2))
 ```
 
-![](images/unnamed-chunk-16-1.png)
+![](images/weekday_vs_weekend-1.png)
