@@ -1,7 +1,9 @@
 ---
 title: "PA1_template"
-output: html_document
-Keep_md: TRUE
+output: 
+ html_document:
+        keep_md: true
+        
 ---
 
 
@@ -16,7 +18,7 @@ data <- read.csv("activity.csv")
 
 ```{r opts, echo = FALSE}
 knitr::opts_chunk$set(
-  fig.path = "images/", include = TRUE
+  fig.path = "images1/", include = TRUE
 )
 ```
 
@@ -39,7 +41,7 @@ stepsperday <- aggregate(steps ~ date, newdata, sum)
 
 Plot a histogram of the total number of steps taken each day.
 
-```{r, echo = TRUE}
+```{r total_steps_per_day_histogram, fig.keep="all", fig.show="asis"}
 hist(stepsperday$steps, col = "blue", xlab = "Steps Per Day", main = "Total Number of Steps Per Day")
 
 ```
@@ -64,7 +66,7 @@ mediansteps
 
 Time Series Plot
 
-```{r, echo = TRUE}
+```{r median_step_per_day, fig.keep="all", fig.show="asis"}
 library(ggplot2)
 intervals <- aggregate(steps ~ interval, newdata, mean)
 plot(intervals$interval, intervals$steps, type = "l", ylim = c(0, 210))
@@ -106,7 +108,7 @@ View(nadata)
 
 Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r, echo = TRUE}
+```{r total_steps_per_day_imputed, fig.keep="all", fig.show="asis"}
 stepsperday2 <- aggregate(steps ~ date, nadata, sum)
 hist(stepsperday2$steps, col = "red", xlab = "Steps Per Day", main = "Total Number of Steps Per Day")
 
@@ -152,7 +154,7 @@ Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minut
 
 
 
-```{r, echo = TRUE}
+```{r weekend_vs_weekday, fig.keep="all", fig.show="asis"}
 library(lattice)
 xyplot(steps~interval|daytype, 
        type="l", 
